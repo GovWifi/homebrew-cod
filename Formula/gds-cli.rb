@@ -1,11 +1,11 @@
-class GdsCli < Formula
-  desc "CLI for common commands used by Government Digital Service staff"
-  homepage "https://github.com/alphagov/gds-cli"
-  url "git@github.com:alphagov/gds-cli.git",
+class CodCli < Formula
+  desc "CLI for common commands used by CO Digital staff"
+  homepage "https://github.com/govwifi/cod-cli"
+  url "git@github.com:govwifi/cod-cli.git",
       using:    :git,
       tag:      "v5.112.0",
       revision: "3247f57d0f2f4241b7a9bd975c383881d3339921"
-  head "git@github.com:alphagov/gds-cli.git",
+  head "git@github.com:govwifi/cod-cli.git",
       using:  :git,
       branch: "main"
 
@@ -20,29 +20,29 @@ class GdsCli < Formula
 
     system "make"
 
-    bin.install "gds"
-    bin.install_symlink("gds" => "gds-cli")
+    bin.install "cod"
+    bin.install_symlink("cod" => "cod-cli")
 
-    # Completion for `gds`
-    output = Utils.safe_popen_read("#{bin}/gds", "shell-completion", "bash")
-    (bash_completion/"gds").write output
-    output = Utils.safe_popen_read("#{bin}/gds", "shell-completion", "zsh")
-    (zsh_completion/"_gds").write output
+    # Completion for `cod`
+    output = Utils.safe_popen_read("#{bin}/cod", "shell-completion", "bash")
+    (bash_completion/"cod").write output
+    output = Utils.safe_popen_read("#{bin}/cod", "shell-completion", "zsh")
+    (zsh_completion/"_cod").write output
 
-    # Completion for `gds-cli`
-    output = Utils.safe_popen_read("#{bin}/gds-cli", "shell-completion", "bash")
-    (bash_completion/"gds-cli").write output
-    output = Utils.safe_popen_read("#{bin}/gds-cli", "shell-completion", "zsh")
-    (zsh_completion/"_gds-cli").write output
+    # Completion for `cod-cli`
+    output = Utils.safe_popen_read("#{bin}/cod-cli", "shell-completion", "bash")
+    (bash_completion/"cod-cli").write output
+    output = Utils.safe_popen_read("#{bin}/cod-cli", "shell-completion", "zsh")
+    (zsh_completion/"_cod-cli").write output
   end
 
   def caveats
     return if OS.linux?
 
-    "gds-cli depends on aws-vault being installed.  You can install it with `brew install --cask aws-vault`."
+    "cod-cli depends on aws-vault being installed.  You can install it with `brew install --cask aws-vault`."
   end
 
   test do
-    assert_match("USAGE", shell_output("#{bin}/gds"))
+    assert_match("USAGE", shell_output("#{bin}/cod"))
   end
 end
