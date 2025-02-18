@@ -20,7 +20,7 @@ jobs:
           set -e
           brew update
           HOMEBREW_TAP_DIR="/usr/local/Homebrew/Library/Taps/govwifi/homebrew-cod"
-          mkdir -p "$HOMEBREW_TAP_DIR"
-          rm -rf "$HOMEBREW_TAP_DIR"
-          ln -s "$PWD" "$HOMEBREW_TAP_DIR"
+          sudo mkdir -p "$HOMEBREW_TAP_DIR"
+          sudo rm -rf "$HOMEBREW_TAP_DIR"
+          sudo ln -s "$PWD" "$HOMEBREW_TAP_DIR"
           brew test-bot cod-cli
