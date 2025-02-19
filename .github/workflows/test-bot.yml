@@ -23,4 +23,5 @@ jobs:
           sudo mkdir -p "$HOMEBREW_TAP_DIR"
           sudo rm -rf "$HOMEBREW_TAP_DIR"
           sudo ln -s "$PWD" "$HOMEBREW_TAP_DIR"
+          brew tap-new govwifi/cod
           brew test-bot cod-cli
