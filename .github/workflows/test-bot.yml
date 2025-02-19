@@ -23,4 +23,4 @@ jobs:
           sudo mkdir -p "$HOMEBREW_TAP_DIR"
           sudo rm -rf "$HOMEBREW_TAP_DIR"
           sudo ln -s "$PWD" "$HOMEBREW_TAP_DIR"
-          brew test-bot --tap=govwifi/homebrew-cod
+          brew test-bot cod-cli
