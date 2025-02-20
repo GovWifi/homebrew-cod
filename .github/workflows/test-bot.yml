@@ -7,6 +7,11 @@ on:
     paths:
       - "Formula/cod-cli.rb"
   workflow_dispatch:
+
+permissions:
+  contents: read
+  pull-requests: write
+
 jobs:
   test-bot:
     runs-on: macos-latest
@@ -23,4 +28,7 @@ jobs:
           sudo mkdir -p "$HOMEBREW_TAP_DIR"
           sudo rm -rf "$HOMEBREW_TAP_DIR"
           sudo ln -s "$PWD" "$HOMEBREW_TAP_DIR"
-          brew test-bot cod-cli
+          brew test-bot --tap=govwifi/cod cod-cli
+        env:
+          HOMEBREW_GITHUB_API_TOKEN: ${{ secrets.COD_TOKEN }}
+
