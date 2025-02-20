@@ -7,6 +7,11 @@ on:
     paths:
       - "Formula/cod-cli.rb"
   workflow_dispatch:
+
+permissions:
+  contents: read
+  pull-requests: write
+
 jobs:
   test-bot:
     runs-on: macos-latest
