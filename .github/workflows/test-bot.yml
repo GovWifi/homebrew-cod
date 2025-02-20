@@ -28,4 +28,7 @@ jobs:
           sudo mkdir -p "$HOMEBREW_TAP_DIR"
           sudo rm -rf "$HOMEBREW_TAP_DIR"
           sudo ln -s "$PWD" "$HOMEBREW_TAP_DIR"
-          brew test-bot --root-url=https://github.com/govwifi/cod-cli --tap=govwifi/cod cod-cli
+          brew test-bot --tap=govwifi/cod cod-cli
+        env:
+          HOMEBREW_GITHUB_API_TOKEN: ${{ secrets.COD_TOKEN }}
+
