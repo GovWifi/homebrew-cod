@@ -1,11 +1,11 @@
 class CodCli < Formula
   desc "CLI for common commands used by CO Digital staff"
   homepage "https://github.com/govwifi/cod-cli"
-  url "git@github.com:govwifi/cod-cli.git",
+  url "https://github.com/GovWifi/cod-cli.git",
       using:    :git,
       tag:      "v5.111.0",
       revision: "66a636e297f661d6ef0874a9904ecbf0633150fd"
-  head "git@github.com:govwifi/cod-cli.git",
+  head "https://github.com/GovWifi/cod-cli.git",
       using:  :git,
       branch: "main"
 
