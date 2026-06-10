@@ -3,8 +3,8 @@ class CodCli < Formula
   homepage "https://github.com/govwifi/cod-cli"
   url "git@github.com:govwifi/cod-cli.git",
       using:    :git,
-      tag:      "v5.113.0",
-      revision: "3d695070e2b23c99221dab5b6e037e269580404b"
+      tag:      "v5.114.0",
+      revision: "ca5bcc96fbc503db0ed13cd95f1f204c2ef6d00b"
   head "git@github.com:govwifi/cod-cli.git",
       using:  :git,
       branch: "main"
